@@ -56,9 +56,6 @@ class TftpProcessor(object):
         packet data is a bytearray, packet source contains the address
         information of the sender.
         """
-        # Add your logic here, after your logic is done,
-        # add the packet to be sent to self.packet_buffer
-        # feel free to remove this line
 
         print(f"Received a packet from {packet_source}")
         # packet
@@ -307,12 +304,7 @@ def do_socket_logic(command_type, file_name, my_Socket, my_Server_adr):
 
 
 def parse_user_input(address, operation, file_name):
-    # Your socket logic can go here,
-    # you can surely add new functions
-    # to contain the socket code.
-    # But don't add socket code in the TftpProcessor class.
-    # Feel free to delete this code as long as the
-    # functionality is preserved.
+    
     my_Socket, my_Server_adr = setup_sockets(address)
     if operation == "push":
         print(f"Attempting to upload [{file_name}]...")
@@ -352,11 +344,6 @@ def main():
 
     print("*" * 50)
 
-    # This argument is required.
-    # For a server, this means the IP that the server socket
-    # will use.
-    # The IP of the server, some default values
-    # are provided. Feel free to modify them.
 
     ip_address = get_arg(1, my_input.split(" ")[0])
     operation = get_arg(2, my_input.split(" ")[1])
